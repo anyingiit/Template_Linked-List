@@ -12,6 +12,16 @@ int main() {
     }
     myList->add(2, 999);
     cout<<myList->toString()<<endl;
+    myList->remove(2);
+    cout<<myList->toString()<<endl;
+    myList->removeFirst();
+    cout<<myList->toString()<<endl;
+    myList->removeLast();
+    cout<<myList->toString()<<endl;
+//    for (int i = 1; i <= 5; i++) {
+//        myList->removeFirst();
+//        cout<<myList->toString()<<endl;
+//    }
 //    cout<<myList->toString()<<endl;
 //    int a = 10;
 //    string *test = new string;
