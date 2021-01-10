@@ -46,7 +46,7 @@ public:
         add(size,e);
     }
     T get(int index){
-        if (!(index>0 && index<=size)){
+        if (!(index>=   0 && index<=size)){
             cout<<"get failed, illegal index, index:"<<index<<endl;
         }
         MyNode<T> *cur = dummyHead->next; //cur: 当前的
@@ -62,7 +62,7 @@ public:
         return get(size-1);
     }
     void set(int index, T e){
-        if (!(index>0 && index<=size)){
+        if (!(index>=0 && index<=size)){
             cout<<"Set failed, illegal index, index:"<<index<<endl;
         }
         MyNode<T> *cur = dummyHead->next;
@@ -70,6 +70,29 @@ public:
             cur = cur->next;
         }
         cur->e = e;
+    }
+    T remove(int index){
+        if (!(index>=0 && index<=size)){
+            cout<<"Remove failed, illegal index, index:"<<index<<endl;
+        }
+        auto *prev = dummyHead;
+        for (int i = 0; i < index; i++) {
+            prev = prev->next;
+        }
+        auto *delNode = prev->next; //待删除节点
+        prev->next = delNode->next; //待删除节点前一个节点, 指向但删除节点的后一个节点
+        //对待删除节点进行删除
+        delNode->next = nullptr;
+        T dataTemp = delNode->e; //对但删除节点数据进行保存
+        delete(delNode);
+        size--;
+        return dataTemp; //返回已删除节点的数据;
+    }
+    T removeFirst(){
+        return remove(0);
+    }
+    T removeLast(){
+        return remove(size - 1);
     }
     bool contains(T e){
         MyNode<T> *cur = dummyHead->next;
