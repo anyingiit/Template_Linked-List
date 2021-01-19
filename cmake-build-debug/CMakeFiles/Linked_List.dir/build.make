@@ -79,15 +79,15 @@ include CMakeFiles/Linked_List.dir/flags.make
 CMakeFiles/Linked_List.dir/main.cpp.obj: CMakeFiles/Linked_List.dir/flags.make
 CMakeFiles/Linked_List.dir/main.cpp.obj: ../main.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=F:\Study\Linked-List\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Linked_List.dir/main.cpp.obj"
-	E:\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Linked_List.dir\main.cpp.obj -c F:\Study\Linked-List\main.cpp
+	C:\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Linked_List.dir\main.cpp.obj -c F:\Study\Linked-List\main.cpp
 
 CMakeFiles/Linked_List.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Linked_List.dir/main.cpp.i"
-	E:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E F:\Study\Linked-List\main.cpp > CMakeFiles\Linked_List.dir\main.cpp.i
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E F:\Study\Linked-List\main.cpp > CMakeFiles\Linked_List.dir\main.cpp.i
 
 CMakeFiles/Linked_List.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Linked_List.dir/main.cpp.s"
-	E:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S F:\Study\Linked-List\main.cpp -o CMakeFiles\Linked_List.dir\main.cpp.s
+	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S F:\Study\Linked-List\main.cpp -o CMakeFiles\Linked_List.dir\main.cpp.s
 
 # Object files for target Linked_List
 Linked_List_OBJECTS = \
