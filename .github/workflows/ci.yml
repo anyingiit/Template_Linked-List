@@ -1,11 +1,19 @@
 # Source: GitHub starter workflow "Simple workflow" (MIT) — https://github.com/actions/starter-workflows/blob/main/ci/blank.yml
+#
+# Repaired by repocurator (feature 002):
+#   - `push` and `pull_request` triggered on `main`; this repository's default
+#     branch is `master`, so the workflow had never run on a push to it.
+#   - the test job ran the starter's placeholder echo, so a green check proved
+#     only that the runner could print a sentence. The repository has no test
+#     of its own, so this adds one real smoke test (tests/smoke_test.cpp) that
+#     builds LinkedList<T> and asserts on add/get/set/remove, and runs it.
 name: CI
 
 on:
   push:
-    branches: [main]
+    branches: [master]
   pull_request:
-    branches: [main]
+    branches: [master]
   workflow_dispatch:
 
 # The workflow token is read-only by default.
@@ -41,8 +49,6 @@ jobs:
           fi
           echo "All actions are pinned to full-length commit SHAs."
 
-      # Add your project's linters below this line.
-
   test:
     name: Test
     runs-on: ubuntu-latest
@@ -52,7 +58,8 @@ jobs:
         with:
           persist-credentials: false
 
-      # Replace the step below with your project's test command. Pin any setup
-      # action you add to a full commit SHA, like the checkout step above.
-      - name: Run tests
-        run: echo "No tests yet. Replace this step with your project's test command."
+      - name: Build
+        run: g++ -std=c++20 -Wall -Wextra -o smoke_test tests/smoke_test.cpp
+
+      - name: Test
+        run: ./smoke_test

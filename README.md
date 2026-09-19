@@ -3,7 +3,9 @@
 
 # Template Linked List
 
-Template linked list has no README describing its purpose; its manifest (CMakeLists.txt) marks it as a C/C++ codebase, built with C++.
+A header-only C++ template class implementing a singly linked list with a dummy head node, demonstrated by a small console program that adds, inspects and removes elements.
+
+**English** · [简体中文](README.zh-CN.md)
 
 [![CI](https://github.com/anyingiit/Template_Linked-List/actions/workflows/ci.yml/badge.svg)](https://github.com/anyingiit/Template_Linked-List/actions/workflows/ci.yml)
 [![License](https://img.shields.io/github/license/anyingiit/Template_Linked-List)](LICENSE)
@@ -24,7 +26,13 @@ Template linked list has no README describing its purpose; its manifest (CMakeLi
 
 ## About The Project
 
-Template linked list has no README describing its purpose; its manifest (CMakeLists.txt) marks it as a C/C++ codebase, built with C++.
+`LinkedList.h` is a header-only template class, `LinkedList<T>`, built on a
+singly linked list with a dummy head node so that `add`, `get`, `set` and
+`remove` all share one traversal instead of special-casing an empty list or
+the first element. `main.cpp` demonstrates it end to end: it builds a
+`LinkedList<int>`, prints the list (via `toString()`) after every mutation,
+and walks through insertion at an index, removal by index, and removing from
+both ends.
 
 See the [open issues](https://github.com/anyingiit/Template_Linked-List/issues) for planned features and known issues.
 
@@ -32,19 +40,28 @@ See the [open issues](https://github.com/anyingiit/Template_Linked-List/issues) 
 
 ### Prerequisites
 
-- Git
+- CMake 3.17 or newer
+- A C++20 compiler, per `CMakeLists.txt`'s `set(CMAKE_CXX_STANDARD 20)`
 
 ### Installation
 
 ```sh
 git clone https://github.com/anyingiit/Template_Linked-List.git
 cd Template_Linked-List
+cmake -S . -B build
+cmake --build build
 ```
+
+This produces the `Linked_List` executable that `CMakeLists.txt`'s
+`add_executable(Linked_List main.cpp)` names.
 
 ## Usage
 
+Run the built executable; it prints the list's contents after each operation
+in a fixed demonstration sequence (no command-line arguments are read):
+
 ```sh
-Template_Linked-List --help
+./build/Linked_List
 ```
 
 ## Contributing
